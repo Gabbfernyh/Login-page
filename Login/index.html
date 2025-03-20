@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla de Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <div class="input-group">
+            <label for="username">Usuário</label>
+            <input type="text" id="username" placeholder="Digite seu usuário">
+        </div>
+        <div class="input-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" placeholder="Digite sua senha">
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="robot-check">
+            <label for="robot-check">Eu não sou um robô</label>
+        </div>
+        <button type="submit">Entrar</button>
+        <div class="forgot-password">
+            <a href="#">Esqueci minha senha</a>
+        </div>
+        <div id="message"></div>
+    <script src="script.js"></script>
+</body>
+</html>
