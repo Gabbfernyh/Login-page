@@ -1,0 +1,198 @@
+/* reset importado ao css principal */
+@import url(./reset.css);
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Gradiente linear de 135 graus para um fundo mais moderno */
+    background: linear-gradient(135deg, #f4f4f4 0%, #e8e8e8 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height em vez de height para melhor responsividade */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    background: white;
+    padding: 40px 50px;
+    border-radius: 12px;
+    /* Sombra mais suave e profunda para efeito de elevação */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    /* max-width garante que não fique muito largo em telas grandes */
+    max-width: 380px;
+    text-align: center;
+    /* Transições suaves para animações de hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de elevação ao passar o mouse sobre o container */
+.login-container:hover {
+    transform: translateY(-5px);
+    /* Move 5px para cima */
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    /* Aumenta a sombra */
+}
+
+header h2 {
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    /* Espaçamento entre letras para melhor legibilidade */
+    letter-spacing: 0.5px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Gap substitui margin-bottom em layouts flexbox modernos */
+    gap: 10px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    /* Borda mais grossa para melhor visibilidade */
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    /* Transições para animações suaves de foco */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    /* Remove outline padrão do navegador */
+    outline: none;
+}
+
+/* Estado de foco dos inputs com efeito visual */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #28a745;
+    /* Box-shadow cria um "glow" verde ao redor do input */
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    /* Gap para espaçamento moderno entre elementos flex */
+    gap: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    cursor: pointer;
+    /* accent-color muda a cor do checkbox (propriedade CSS moderna) */
+    accent-color: #28a745;
+}
+
+.checkbox-group label {
+    margin: 0;
+    cursor: pointer;
+    /* Previne seleção de texto ao clicar */
+    user-select: none;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    /* Múltiplas transições para diferentes propriedades */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+    /* Eleva o botão ligeiramente ao passar o mouse */
+    transform: translateY(-2px);
+}
+
+/* Estado active (quando clicado) retorna à posição original */
+button:active {
+    transform: translateY(0);
+}
+
+#message {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    display: none;
+    /* Aplica animação keyframe definida abaixo */
+    animation: slideIn 0.3s ease;
+}
+
+/* Classe de sucesso com background e borda verdes */
+#message.success {
+    color: #28a745;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+/* Seletor :not() para mensagens de erro (sem a classe success) */
+#message:not(.success) {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+.forgot-password {
+    margin-top: 15px;
+}
+
+.forgot-password a {
+    color: #28a745;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: #218838;
+    text-decoration: underline;
+}
+
+/* Animação keyframe para entrada suave das mensagens */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+        /* Começa 10px acima */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /* Termina na posição normal */
+    }
+}
